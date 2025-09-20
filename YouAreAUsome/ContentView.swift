@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var message = "I am a programmer!"
+    @State private var message = "I am a Developer!"
     var body: some View {
         VStack {
             Image(systemName: "swift")
