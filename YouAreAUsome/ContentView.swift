@@ -14,6 +14,7 @@ struct ContentView: View {
     
     // Views
     var body: some View {
+        
         VStack {
             Spacer()
             
@@ -23,10 +24,11 @@ struct ContentView: View {
                 .foregroundStyle(.orange)
             
             Text(message)
-                .font(.largeTitle)
-                .fontWeight(.ultraLight)
-                .foregroundStyle(.black)
-            
+                //.font(.largeTitle)
+                .font(.custom("Montserrat-ExtraLight", size: 35))
+                //.fontWeight(.ultraLight)
+                //.foregroundStyle(.black)
+           
             Spacer()
             
             Button("Press Me") {
@@ -50,7 +52,8 @@ struct ContentView: View {
                 
             }
             .buttonStyle(.borderedProminent)
-            .font(.title2)
+            .font(.custom("Montserrat-Black", size: 50))
+            //.font(.title2)
             .tint(.orange)
         }
         .padding()
