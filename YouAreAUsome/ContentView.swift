@@ -18,16 +18,15 @@ struct ContentView: View {
         VStack {
             Spacer()
             
-            Image(systemName: imageName)
+            Image(imageName)
                 .resizable()
                 .scaledToFit()
-                .foregroundStyle(.orange)
+                .clipShape(RoundedRectangle(cornerRadius: 30))
+                .shadow(radius: 30)
             
             Text(message)
-                //.font(.largeTitle)
-                .font(.custom("Montserrat-ExtraLight", size: 35))
-                //.fontWeight(.ultraLight)
-                //.foregroundStyle(.black)
+                .font(.custom("Montserrat-Black", size: 35))
+                .foregroundStyle(.blue)
            
             Spacer()
             
@@ -35,26 +34,17 @@ struct ContentView: View {
                 // Local Variables
                 let awesomeMessage = "You Are Awesome!" // Use 'let' to create constants
                 let greatMessage = "You Are Great!"
-                let thumbsUpImage = "hand.thumbsup"
-                let sunImage = "sun.max.fill"
+                let audhdImage1 = "Hyperfocus"
+                let audhdImage2 = "PowerfulMind"
                 
-                // if-else Conditional logic
-//                if message == awesomeMessage {
-//                    message = greatMessage
-//                    imageName = thumbsUpImage
-//                } else {
-//                    message = awesomeMessage
-//                    imageName = sunImage
-//                }
                 // Ternary logic
                 message = (message == awesomeMessage ? greatMessage : awesomeMessage)
-                imageName = (imageName == sunImage ? thumbsUpImage : sunImage)
+                imageName = (imageName == audhdImage2 ? audhdImage1 : audhdImage2)
                 
             }
             .buttonStyle(.borderedProminent)
             .font(.custom("Montserrat-Black", size: 50))
-            //.font(.title2)
-            .tint(.orange)
+            
         }
         .padding()
     }
