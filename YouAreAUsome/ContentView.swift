@@ -36,13 +36,17 @@ struct ContentView: View {
                 let thumbsUpImage = "hand.thumbsup"
                 let sunImage = "sun.max.fill"
                 
-                if message == awesomeMessage {
-                    message = greatMessage
-                    imageName = thumbsUpImage
-                } else {
-                    message = awesomeMessage
-                    imageName = sunImage
-                }
+                // if-else Conditional logic
+//                if message == awesomeMessage {
+//                    message = greatMessage
+//                    imageName = thumbsUpImage
+//                } else {
+//                    message = awesomeMessage
+//                    imageName = sunImage
+//                }
+                // Ternary logic
+                message = (message == awesomeMessage ? greatMessage : awesomeMessage)
+                imageName = (imageName == sunImage ? thumbsUpImage : sunImage)
                 
             }
             .buttonStyle(.borderedProminent)
