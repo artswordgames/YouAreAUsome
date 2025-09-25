@@ -11,6 +11,7 @@ struct ContentView: View {
     // Struct-wide variables
     @State private var message = ""
     @State private var imageName = ""
+    @State private var imageNumber = 0
     
     // Views
     var body: some View {
@@ -26,24 +27,31 @@ struct ContentView: View {
             
             Text(message)
                 .font(.custom("Montserrat-Black", size: 35))
-                .foregroundStyle(.blue)
+                .fontWeight(.heavy)
+                .foregroundStyle(.red)
            
             Spacer()
             
-            Button("Press Me") {
+            Button("Show Message") {
                 // Local Variables
                 let awesomeMessage = "You Are Awesome!" // Use 'let' to create constants
                 let greatMessage = "You Are Great!"
-                let audhdImage1 = "Hyperfocus"
-                let audhdImage2 = "PowerfulMind"
                 
-                // Ternary logic
+                imageName = "image\(imageNumber)"
                 message = (message == awesomeMessage ? greatMessage : awesomeMessage)
-                imageName = (imageName == audhdImage2 ? audhdImage1 : audhdImage2)
+                
+                imageNumber += 1
+                
+                if imageNumber > 12 {
+                    imageNumber = 0
+                }
+                print(imageNumber)
                 
             }
             .buttonStyle(.borderedProminent)
-            .font(.custom("Montserrat-Black", size: 50))
+            .buttonStyle(.glassProminent)
+            .tint(.black)
+            .font(.custom("Montserrat-Black", size: 30))
             
         }
         .padding()
