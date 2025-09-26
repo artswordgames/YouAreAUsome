@@ -18,19 +18,20 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            Spacer()
+            Text(message)
+                .font(.custom("Montserrat-Black", size: 35))
+                .fontWeight(.heavy)
+                .foregroundStyle(.red)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.5)
+                .frame(minHeight: 120)
             
             Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .shadow(radius: 30)
-            
-            Text(message)
-                .font(.custom("Montserrat-Black", size: 35))
-                .fontWeight(.heavy)
-                .foregroundStyle(.red)
-                .multilineTextAlignment(.center)
+                .animation(.easeInOut(duration: 0.25), value: message)
             
             Spacer()
             
