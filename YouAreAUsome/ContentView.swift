@@ -39,7 +39,8 @@ struct ContentView: View {
                                 "Nat 1!",
                                 "Focus Fire!",
                                 "How Do You Want To Do This?",
-                                "What Do You Do?"]
+                                "What Do You Do?",
+                                "I Check For Traps!"]
                 
                 message = messages[Int.random(in: 0...messages.count - 1)]
                 
