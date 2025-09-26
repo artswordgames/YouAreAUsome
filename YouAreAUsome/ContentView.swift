@@ -10,9 +10,7 @@ import SwiftUI
 struct ContentView: View {
     // Struct-wide variables
     @State private var message = ""
-    @State private var messageNumber = 0
     @State private var imageName = ""
-    @State private var imageNumber = 0
     
     // Views
     var body: some View {
@@ -43,21 +41,9 @@ struct ContentView: View {
                                 "How Do You Want To Do This?",
                                 "What Do You Do?"]
                 
-                message = messages[messageNumber]
-                messageNumber += 1
+                message = messages[Int.random(in: 0...messages.count - 1)]
                 
-                if messageNumber == messages.count {
-                    messageNumber = 0
-                }
-                
-                imageName = "image\(imageNumber)"
-                imageNumber += 1
-                
-                if imageNumber > 12 {
-                    imageNumber = 0
-                }
-                print(imageNumber)
-                
+                imageName = "image\(Int.random(in: 0...12))"
             }
             .buttonStyle(.borderedProminent)
             .buttonStyle(.glassProminent)
