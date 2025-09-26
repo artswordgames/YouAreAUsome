@@ -17,12 +17,12 @@ struct ContentView: View {
         
         VStack {
             Text(message)
-                .font(.custom("Montserrat-Black", size: 35))
+                .font(.custom("JSL-Blackletter", size: 55))
                 .fontWeight(.heavy)
                 .foregroundStyle(.red)
                 .multilineTextAlignment(.center)
                 .minimumScaleFactor(0.5)
-                .frame(minHeight: 120)
+                .frame(minHeight: 100)
             
             Image(imageName)
                 .resizable()
@@ -52,7 +52,7 @@ struct ContentView: View {
             .buttonStyle(.borderedProminent)
             .buttonStyle(.glassProminent)
             .tint(.black)
-            .font(.custom("Montserrat-Black", size: 30))
+            .font(.custom("OldNewspaperTypes", size: 30))
             
         }
         .padding()
