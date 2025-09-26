@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     // Struct-wide variables
     @State private var message = ""
+    @State private var messageNumber = 0
     @State private var imageName = ""
     @State private var imageNumber = 0
     
@@ -29,17 +30,26 @@ struct ContentView: View {
                 .font(.custom("Montserrat-Black", size: 35))
                 .fontWeight(.heavy)
                 .foregroundStyle(.red)
-           
+                .multilineTextAlignment(.center)
+            
             Spacer()
             
             Button("Show Message") {
-                // Local Variables
-                let awesomeMessage = "You Are Awesome!" // Use 'let' to create constants
-                let greatMessage = "You Are Great!"
+                let messages = ["Never Split The Party!",
+                                "Nat 20!",
+                                "Nat 1!",
+                                "Focus Fire!",
+                                "How Do You Want To Do This?",
+                                "What Do You Do?"]
+                
+                message = messages[messageNumber]
+                messageNumber += 1
+                
+                if messageNumber == messages.count {
+                    messageNumber = 0
+                }
                 
                 imageName = "image\(imageNumber)"
-                message = (message == awesomeMessage ? greatMessage : awesomeMessage)
-                
                 imageNumber += 1
                 
                 if imageNumber > 12 {
