@@ -11,6 +11,8 @@ struct ContentView: View {
     // Struct-wide variables
     @State private var message = ""
     @State private var imageName = ""
+    @State private var lastMessageNumber = -1
+    @State private var lastImageNumber = -1
     
     // Views
     var body: some View {
@@ -45,9 +47,19 @@ struct ContentView: View {
                                 "When Last We Left Our Heroes...",
                                 "You Can Certainly Try!"]
                 
-                message = messages[Int.random(in: 0...messages.count - 1)]
+                var messageNumber:Int
+                repeat {
+                    messageNumber = Int.random(in: 0...messages.count - 1)
+                } while messageNumber == lastMessageNumber
+                message = messages[messageNumber]
+                lastMessageNumber = messageNumber
                 
-                imageName = "image\(Int.random(in: 0...12))"
+                var imageNumber: Int
+                repeat {
+                    imageNumber = Int.random(in: 0...12)
+                } while imageNumber == lastImageNumber
+                imageName = "image\(imageNumber)"
+                lastImageNumber = imageNumber
             }
             .buttonStyle(.borderedProminent)
             .buttonStyle(.glassProminent)
